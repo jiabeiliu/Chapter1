@@ -1,0 +1,19 @@
+# Simulating McCulloch and Pitts Neuron
+
+def mcCullochPitts(inputs, weights, threshold):
+    # Aggregate the weighted inputs
+    weighted_sum = sum(i * w for i, w in zip(inputs, weights))
+    
+    # Output 1 if sum exceeds threshold, otherwise output 0
+    if weighted_sum >= threshold:
+        return 1
+    else:
+        return 0
+
+# Example usage
+inputs = [1, 0, 1]  # Binary inputs
+weights = [0.5, 0.3, 0.2]  # Weights for the inputs
+threshold = 0.5  # Threshold for activation
+
+output = mcCullochPitts(inputs, weights, threshold)
+print("Output:", output)
